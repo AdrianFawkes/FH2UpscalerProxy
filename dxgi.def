@@ -1,0 +1,15 @@
+; dxgi.def — Module definition file for the DXGI proxy DLL.
+; Every export listed here is forwarded to the real dxgi.dll at runtime
+; via our trampoline functions in dxgi_proxy.cpp.
+LIBRARY "dxgi"
+EXPORTS
+    CreateDXGIFactory               @1
+    CreateDXGIFactory1              @2
+    CreateDXGIFactory2              @3
+    DXGID3D10CreateDevice           @4   PRIVATE
+    DXGID3D10CreateLayeredDevice    @5   PRIVATE
+    DXGID3D10GetLayeredDeviceSize   @6   PRIVATE
+    DXGID3D10RegisterLayers         @7   PRIVATE
+    DXGIGetDebugInterface1          @8   PRIVATE
+    DXGIDumpJournal                 @9   PRIVATE
+    DXGIReportAdapterConfiguration  @10  PRIVATE
